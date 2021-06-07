@@ -1,0 +1,21 @@
+{
+  "name": "showtyiomessenger",
+  "version": "1.0.0",
+  "description": "Socket.IO Messanger Server",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.22.4",
+    "socket.io": "^4.1.1",
+    "socketio-jwt": "^4.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
