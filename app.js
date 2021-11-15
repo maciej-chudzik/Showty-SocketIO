@@ -2,7 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http, { cookie: false });
 const Sequelize = require('sequelize');
-var socketioJwt = require('socketio-jwt');
+//var socketioJwt = require('socketio-jwt');
 var moment = require('moment');
 
 var connectedSocketsList = [];
@@ -90,16 +90,16 @@ http.listen(process.env.PORT || 3000, function(){
 
 
 
-io.use(socketioJwt.authorize({
-    secret: process.env.JWT_SECRECT_KEY,
-    auth_header_required: true,
-    handshake: true,
-}));
+// io.use(socketioJwt.authorize({
+//     secret: process.env.JWT_SECRECT_KEY,
+//     auth_header_required: true,
+//     handshake: true,
+// }));
 
 io.on('connection', function(clientSocket) {
 
 
-    const login_connected = clientSocket.decoded_token.identity;
+    const login_connected = clientSocket.handshake.query.login;
     const connect_message = "User " + login_connected + " connected.";
     console.log(connect_message);
     console.log(clientSocket.handshake)
