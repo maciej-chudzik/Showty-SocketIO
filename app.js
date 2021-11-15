@@ -14,7 +14,7 @@ function getConnectedList()
     for (let [id, socket] of io.of("/").sockets) {
 
 
-        list.push(socket.decoded_token.identity);
+        list.push(socket.handshake.query.login);
     }
 
     return list
